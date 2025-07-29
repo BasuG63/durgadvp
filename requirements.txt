@@ -1,2 +1,9 @@
 Flask
 gunicorn
+python-dotenv
+requests
+Flask-WTF
+Flask-Login
+Flask-SQLAlchemy
+Flask-Migrate
+Flask-Mail
