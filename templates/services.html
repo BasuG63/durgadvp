@@ -2,195 +2,144 @@
 <html lang="en">
 <head>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services | DURGA DEVELOPERS</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Poppins', sans-serif; background: linear-gradient(120deg, #fffbe7 0%, #ffe0b2 100%); }
-        .service-card {
-            background: #fff;
-            border-radius: 2rem;
-            box-shadow: 0 4px 24px rgba(224,126,60,0.10);
-            padding: 2.2rem 1.5rem 2rem 1.5rem;
-            margin-bottom: 2.2rem;
-            transition: box-shadow 0.3s, transform 0.25s, border 0.2s;
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-        .service-card:hover {
-            box-shadow: 0 12px 36px rgba(224,126,60,0.18);
-            transform: translateY(-8px) scale(1.03);
-            border: 2px solid #ffd180;
-        }
-        .service-img {
-            width: 100%;
-            border-radius: 1.2rem;
-            margin-bottom: 1.2rem;
-            object-fit: cover;
-            max-height: 200px;
-            box-shadow: 0 2px 12px rgba(224,126,60,0.10);
-            transition: box-shadow 0.3s, transform 0.2s;
-        }
-        .service-card:hover .service-img {
-            box-shadow: 0 6px 24px rgba(224,126,60,0.18);
-            transform: scale(1.04);
-        }
-        .service-price {
-            font-weight: 700;
-            color: #e07e3c;
-            font-size: 1.15rem;
-            background: #fffbe7;
-            border-radius: 1rem;
-            display: inline-block;
-            padding: 0.3rem 1.2rem;
-            margin-top: 0.7rem;
-            box-shadow: 0 1px 4px rgba(224,126,60,0.08);
-        }
-        h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
-        .service-card .fa {
-            color: #e07e3c;
-            font-size: 2.5rem;
-            margin-bottom: 0.7rem;
-            transition: color 0.2s;
-        }
-        .service-card:hover .fa {
-            color: #ffb74d;
-        }
-        .service-card .service-icon {
-            background: #fffbe7;
-            border-radius: 50%;
-            width: 64px;
-            height: 64px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem auto;
-            box-shadow: 0 2px 8px rgba(224,126,60,0.10);
-        }
-        .service-card .service-icon img {
-            width: 38px;
-            height: 38px;
-            object-fit: contain;
-        }
-        .service-card .service-icon {
-            transition: background 0.2s;
-        }
-        .service-card:hover .service-icon {
-            background: #ffd180;
-        }
-        .service-card .service-name {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-        .service-card .service-uses {
-            color: #6d4c41;
-            font-size: 1.05rem;
-            min-height: 48px;
-        }
-        @media (max-width: 991.98px) {
-            .service-card { padding: 1.2rem 0.7rem; }
-            .service-img { max-height: 140px; }
-        }
-        @media (max-width: 767.98px) {
-            .container, .container-fluid { padding-left: 8px !important; padding-right: 8px !important; }
-            .service-card { padding: 0.7rem 0.3rem; margin-bottom: 1.2rem; }
-            .service-img { max-height: 90px; }
-            h1 { font-size: 1.5rem; }
-            h3 { font-size: 1.1rem; }
-            .service-card .service-name { font-size: 1.05rem; }
-            .service-card .service-uses { font-size: 0.95rem; }
-            .service-price { font-size: 1rem; padding: 0.2rem 0.7rem; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services | DURGA DEVELOPERS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(120deg, #fffbe7 0%, #ffe0b2 100%);
+    }
+
+    .service-box {
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(224,126,60,0.10);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: box-shadow 0.2s, transform 0.2s;
+      border: 1.5px solid #ffe0b2;
+      height: 100%;
+    }
+
+    .service-box:hover {
+      box-shadow: 0 6px 18px rgba(224,126,60,0.18);
+      transform: translateY(-4px) scale(1.02);
+      border-color: #ffd180;
+    }
+
+    .service-img {
+      width: 100%;
+      max-height: 520px;
+      object-fit: cover;
+      border-radius: 0.7rem;
+      background: #fffbe7;
+      margin-bottom: 0.7rem;
+      box-shadow: 0 1px 4px rgba(224,126,60,0.08);
+    }
+
+    .service-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: #e07e3c;
+      text-align: center;
+      margin-top: 0.3rem;
+    }
+
+    .service-price {
+      font-size: 0.95rem;
+      color: #333;
+      text-align: center;
+      margin-top: 0.3rem;
+    }
+  </style>
 </head>
 <body>
-   
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid px-2">
-            <a class="navbar-brand fw-bold" href="{{ url_for('home') }}">DURGA DEVELOPERS</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}#our-services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}#our-works">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}#contact-us">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="container py-5">
-        <div class="d-flex justify-content-end mb-3">
-            <a href="{{ url_for('home') }}" class="btn btn-primary px-4">Back to Home</a>
-        </div>
-        <h1 class="text-center mb-5">Our Services</h1>
-        <div class="row g-4" id="services-list">
-            <!-- Cards will be injected by JS -->
-        </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid px-2">
+      <a class="navbar-brand fw-bold" href="{{ url_for('home') }}">DURGA DEVELOPERS</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}#our-services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}#our-works">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}#contact-us">Contact</a></li>
+        </ul>
+      </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-    // Dynamic services data
+  </nav>
+
+  <!-- Services Section -->
+  <div class="container py-5">
+    <div class="d-flex justify-content-end mb-3">
+      <a href="{{ url_for('home') }}" class="btn btn-primary px-4">Back to Home</a>
+    </div>
+    <h1 class="text-center mb-5">Our Services</h1>
+    <div class="row g-4" id="services-list">
+      <!-- Cards injected by JS -->
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
     const services = [
-        {
-            img: "{{ url_for('static', filename='services/tractore.png') }}",
-            name: "Tractor Rentals",
-            uses: "Modern machines for reliable site work, available for short and long-term projects.",
-            price:"Price on Request"
-        },
-        {
-            img:"{{ url_for('static', filename='services/roller.jpg') }}",
-            name: "Rollers",
-            uses: "High-quality rollers for road leveling and surface finishing, ensuring smooth results.",
-            price: "Price on Request"
-        },
-        {
-            img: "{{ url_for('static', filename='services/tanker.webp') }}",
-            name: "Water Tanks",
-            uses: "Water supply solutions for construction sites and infrastructure projects.",
-            price: "Price on Request"
-        },
-        {
-            img:"{{ url_for('static', filename='services/ijak.webp') }}",
-            name: "AJAX machine",
-            uses: "The AJAX concrete kerb mix machine you're referring to is likely one of their Self-Loading Concrete Mixers (SLCMs)—designed for efficient on-site mixing, especially for kerb laying and road infrastructure projects.",
-            price: "Price on Request"
-        },
-        {
-            img:"{{ url_for('static', filename='services/paver-finisher.jpg') }}",
-            name: "paver finisher",
-            uses: "🚧 A paver finisher is used in road construction to evenly lay asphalt or concrete, ensuring a smooth surface for vehicles and pedestrians. 🏗️ It improves efficiency and precision by automating the process of spreading and compacting paving materials over large areas..",
-            price: "Price on Request"
-        },
-        {
-            img: "{{ url_for('static', filename='services/v-roller.webp') }}",
-            name: "vibretory roller",
-            uses: "🚜 A vibratory roller is a heavy-duty compaction machine used in road construction and civil engineering to compress soil, asphalt, or other materials. It uses a vibrating drum to reduce air gaps and increase material density, resulting in a stable and durable surface",
-            price: "Price on Request"
-        }
-        // Add more objects here to add more services dynamically
+      {
+        img: "{{ url_for('static', filename='services/Tractore.png') }}",
+        name: "Tractor Rentals",
+        price: "Price on Request"
+      },
+      {
+        img: "{{ url_for('static', filename='services/roller.jpg') }}",
+        name: "Rollers",
+        price: "Price on Request"
+      },
+      {
+        img: "{{ url_for('static', filename='services/tanker.webp') }}",
+        name: "Water Tanks",
+        price: "Price on Request"
+      },
+      {
+        img: "{{ url_for('static', filename='services/ijak.webp') }}",
+        name: "AJAX Machine",
+        price: "Price on Request"
+      },
+      {
+        img: "{{ url_for('static', filename='services/paver-finisher.jpg') }}",
+        name: "Paver Finisher",
+        price: "Price on Request"
+      },
+      {
+        img: "{{ url_for('static', filename='services/v-roller.webp') }}",
+        name: "Vibratory Roller",
+        price: "Price on Request"
+      }
     ];
 
     const servicesList = document.getElementById('services-list');
     services.forEach(service => {
-        const col = document.createElement('div');
-        col.className = "col-md-4";
-        col.innerHTML = `
-            <div class="service-card text-center">
-                <img src="${service.img}" alt="${service.name}" class="service-img mb-2">
-                <h3>${service.name}</h3>
-                <p>${service.uses}</p>
-                <div class="service-price">${service.price}</div>
-            </div>
-        `;
-        servicesList.appendChild(col);
+      const col = document.createElement('div');
+      col.className = "col-12 col-sm-6 col-md-4";
+      col.innerHTML = `
+        <div class="service-box">
+          <img src="${service.img}" alt="${service.name}" class="service-img">
+          <div class="service-name">${service.name}</div>
+          <p class="service-price">${service.price}</p>
+        </div>
+      `;
+      servicesList.appendChild(col);
     });
-    </script>
+  </script>
+
 </body>
 </html>
